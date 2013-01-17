@@ -1,3 +1,5 @@
+#= require ./underscore-min
+
 App.routing_yaml = YAML.load('routing.yml')
 App.routing = (hash = {}, route) ->
   route_val = ""
