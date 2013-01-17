@@ -7,10 +7,8 @@ App.routing = (hash = {}, route) ->
       return false
   )
 
-  if _.isEmpty(hash)
-    return route_val
-  else
+  unless _.isEmpty(hash)
     $.each(hash, (key, val) ->
       route_val = route_val.replace(":"+key, val)
     )
-    return route_val
+  return route_val
