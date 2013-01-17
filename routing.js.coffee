@@ -2,8 +2,9 @@ App.routing_yaml = YAML.load('routing.yml')
 App.routing = (hash = {}, route) ->
   route_val = ""
   $.each(App.routing_yaml.routing.API, (key, val) ->
-    if key == route
+    if _.isEqual(key,route)
       route_val = val 
+      return false
   )
 
   if _.isEmpty(hash)
